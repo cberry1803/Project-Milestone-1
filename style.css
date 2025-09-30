@@ -1,0 +1,64 @@
+body{
+    background-color: tan;
+    color: black;
+}
+/* Sets the background and text color */
+
+/* Box Layout for the Navigation Bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+}
+/* Styles for the links in the Navigation Bar */
+ul li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+/* Hover effect for the links in the Navigation Bar */
+ul li a:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+/* Centers the main heading and aligns subheadings to the left */
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: left;
+}
+
+p1 {
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+/*Style for About section Bullets*/
+ol{
+    list-style-type: disc;
+    margin-left: 20px;
+    padding: 0;
+    color: black;
+    text-align: center;
+    list-style-position: inside;
+}
+/* Style for Tables */
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
