@@ -50,6 +50,12 @@ h1.About {
     text-align: center;
 }
 
+#browser-wars-heading {
+    text-align: center;
+    color: black;
+    font-size: 40px;
+}
+
 div.abstract, p1 {
     text-align: left;
     color: black;
