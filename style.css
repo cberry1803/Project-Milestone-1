@@ -1,6 +1,8 @@
 body{
     background-color: tan;
     color: black;
+    position: relative;
+    z-index: 1;
 }
 /* Sets the background and text color */
 
@@ -108,3 +110,101 @@ div.logos {
 a:hover {
     color: rgb(13, 151, 13) 
 }
+
+/* Style for Quiz Section */
+div.quiz-container {
+    width: 1000px; 
+    margin: 0 auto;
+    background-color: rgb(111, 133, 119);
+    border: 2px solid black;
+    padding: 50px;
+    
+    
+    
+}
+/*All style for quiz elements*/
+/* Style for Quiz Questions */
+
+.quiz h2 {
+    text-align: center;
+    margin-left: 20px;
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;
+}
+/* Style for Quiz Options */
+.answer-btn {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: lightgray;
+    border: 1px solid black;
+    cursor: pointer;
+    text-align: center;
+
+}
+.answer-btn:hover:not([disabled]) {
+    background-color: gray;
+    color: white;
+}
+
+/*Style for next button*/
+#next-btn {
+    display: none;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    
+}   
+#next-btn:hover {
+    background-color: darkgreen;
+}
+
+.correct{
+    background-color: lightgreen;
+}
+.incorrect{
+    background-color: lightcoral;
+}   
+/* Style for Fill-in-the-Blank Input */
+.fill-in-blank-input {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* Style for Multi-Answer Checkboxes */
+.answer-checkbox {
+    display: inline;
+}
+
+.answer-label {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: lightgray;
+    border: 1px solid black;
+    cursor: pointer;
+    text-align: left;
+}
+
+.answer-label.correct {
+    background-color: #28a745 !important;
+    color: #fff !important;
+    border-color: #218838 !important;
+}
+
+.answer-label.incorrect {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+    border-color: #c82333 !important;
+}
+
+
