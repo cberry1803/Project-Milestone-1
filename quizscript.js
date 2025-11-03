@@ -2,50 +2,50 @@
 // Questions and Answers Array
 const questions = [
     {
-        question: "Who is credited with creating the World Wide Web?",
+        question: "What is the main purpose of a browsers' rendering engine?",
         type: "single-answer",
         answers: [
-            { text: "Steve Jobs", correct: false },
-            { text: "Tim Berners-Lee", correct: true },
-            { text: "Bill Gates", correct: false },
-            { text: "Mark Zuckerberg", correct: false }
+            { text: "To store cookies.", correct: false },
+            { text: "To display HTML and CSS code visually.", correct: true },
+            { text: "To connect to the internet.", correct: false },
+            { text: "To protect the computer from viruses.", correct: false }
         ]
 
     },
     {
-        question: "What does HTML stand for?",
+        question: "Which of the following browsers introduced Javascirpt to the web?",
         type: "single-answer",
         answers: [
-            { text: "Hyperlinks and Text Markup Language", correct: false },
-            { text: "Home Tool Markup Language", correct: false },
-            { text: "Hyper Text Markup Language", correct: true },
-            { text: "Hyperlinking Text Marking Language", correct: false }
+            { text: "Opera", correct: false },
+            { text: "Internet Explorer", correct: false },
+            { text: "Netscape Navigator", correct: true },
+            { text: "Mosaic", correct: false }
         ]
     },
     {
-        question: "Which company developed the first web browser?",
+        question: "Which protocol is used by broswers to retrieve content from web servers?",
         type: "single-answer",
         answers: [
-            { text: "Netscape", correct: false },
-            { text: "Microsoft", correct: false },
-            { text: "CERN", correct: true },
-            { text: "Apple", correct: false }
+            { text: "HTML", correct: false },
+            { text: "FTP", correct: false },
+            { text: "HTTP", correct: true },
+            { text: "TCP", correct: false }
         ]
     },
     {
-        question: "This is a place holder question?",
+        question: "Which of the following are modern web browsers? (Select all that apply)",
         type: "multi-answer",
         answers: [
-            { text: "False", correct: false },
-            { text: "True", correct: true },
-            {text: "Also true", correct: true},
-            {text: "Also false", correct: false}
+            { text: "Google Chrome", correct: true },
+            { text: "Mozilla Firefox", correct: true },
+            {text: "Microsoft Edge", correct: true},
+            {text: "Windows XP", correct: false}
         ]
     },
     {
-        question: "What is 'UI' the abbreviation for in web development?",
+        question: "While at _____ Tim Berners-Lee invented the World Wide Web.",
         type: "blank",
-        answers: [{ text: "User Interface", correct: true }]
+        answers: [{ text: "CERN", correct: true }]
     }
 ];
 
@@ -109,16 +109,18 @@ function showQuestion() {
         });
     }
 }
+// Reset State
 function resetState(){
     nextButton.style.display = "none";
     while(answerButtons.firstChild){
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
-
+// Select Answer
 function selectAnswer(e){
     const currentQuestion = questions[currentQuestionIndex];
-
+    // Handle different question types
+    // Fill-in-the-blank
     if (currentQuestion.type === "blank") {
         const input = answerButtons.querySelector("input.fill-in-blank-input");
         const userAnswer = input.value.trim().toLowerCase();
@@ -131,20 +133,20 @@ function selectAnswer(e){
             input.classList.add("incorrect");
         }
         input.disabled = true;
-
+    // Multiple-answer
     } else if (currentQuestion.type === "multi-answer") {
         const checkboxes = Array.from(answerButtons.querySelectorAll("input[type='checkbox']"));
         let userCorrect = true;
         let anyAnswerSelected = false;
-        
+    // Check each checkbox
         checkboxes.forEach((checkbox) => {
             const isCorrectOption = checkbox.dataset.correct === "true";
             const label = checkbox.parentNode;
-
+            // Correct option
             if (isCorrectOption) {
                 label.classList.add("correct");
             }
-            
+            // User selected this option
             if (checkbox.checked) {
                 anyAnswerSelected = true;
                 if (!isCorrectOption) {
@@ -160,6 +162,7 @@ function selectAnswer(e){
         if (userCorrect && anyAnswerSelected) {
             score++;
         }
+    // Single-answer
     } else { 
         const selectedBtn = e.target;
         const isCorrect = selectedBtn.dataset.correct === "true";
@@ -176,25 +179,28 @@ function selectAnswer(e){
             button.disabled = true;
         });
     }
-
+    // Show Next Button
     nextButton.style.display = "block";
     nextButton.innerHTML = "Next";
 }
 
-
+// Show Score
 function showScore(){
     resetState();
+    // Display final score
     questionElement.innerHTML = `Score: ${score} out of ${questions.length}.`;
+    // Pass/Fail Message based on 70% threshold
     if (score / questions.length >= 0.7) {
         questionElement.innerHTML += "<br>Great job! You passed.";
     } else {
         questionElement.innerHTML += "<br> You failed.";
     }   
+    // Show Try Again button
     nextButton.innerHTML = "Try Again";
     nextButton.style.display = "block";
 }
 
-
+// Handle Next Button Click
 function handleNextButton(){
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
@@ -204,7 +210,7 @@ function handleNextButton(){
     }
 }
 
-
+// Next Button Event Listener
 nextButton.addEventListener("click", () => {
      if (nextButton.innerHTML === "Try Again") {
         startQuiz();

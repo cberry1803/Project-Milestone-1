@@ -65,16 +65,48 @@ div.abstract, p1 {
     margin-left: 80px;
     margin-right: 80px;
     padding: 50px;
+    
+}
+
+#subsection {
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding-top: 50px;
+    padding-bottom: 0px;
+    list-style-position: outside;
+}
+
+#concepts-txt {
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+ol.concepts-list {
+    text-align: left;
+    color: black;
+    font-size: 20px;
+    margin-left: px;
+    margin-right: 80px;
+    padding: 20px;
+    list-style-position: outside;
 }
 
 
 /*Style for About section Bullets*/
 ol{
     list-style-type: disc;
-    margin-left: 20px;
+    margin-left: 600px;
     padding: 0;
     color: black;
-    text-align: center;
+    text-align: left;
     list-style-position: inside;
 }
 /* Style for Tables */
@@ -90,6 +122,13 @@ div.keyterms {
     background-color: rgb(75, 146, 75);
     border: 2px solid black;
     padding: 0px;
+    margin:11px;
+}
+
+div.concepts-list {
+    background-color: rgb(75, 146, 75);
+    border: 2px solid black;
+    padding: 20px;
     margin:11px;
 }
 
