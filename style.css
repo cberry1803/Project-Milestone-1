@@ -164,27 +164,49 @@ div.quiz-container {
 /*All style for quiz elements*/
 /* Style for Quiz Questions */
 
+div.quiz-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgb(111, 133, 119);
+    border: 2px solid black;
+    padding: 50px;
+}
+
 .quiz h2 {
     text-align: center;
-    margin-left: 20px;
     border-bottom: 2px solid black;
     padding-bottom: 20px;
 }
-/* Style for Quiz Options */
+
+/* Quiz Buttons */
 .answer-btn {
     display: block;
-    width: 90%;
+    width: 100%;
     margin: 10px auto;
     padding: 15px;
     background-color: lightgray;
     border: 1px solid black;
     cursor: pointer;
-    text-align: center;
-
 }
-.answer-btn:hover:not([disabled]) {
-    background-color: gray;
-    color: white;
+
+/* Fill-in-the-blank */
+.fill-in-blank-input {
+    display: block;
+    width: 100%;
+    margin: 12px auto;
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* Multi-answer labels */
+.answer-label {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: lightgray;
+    border: 1px solid black;
 }
 
 /*Style for next button*/
