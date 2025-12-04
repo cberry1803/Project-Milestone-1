@@ -246,58 +246,170 @@ div.quiz-container {
     border-color: #c82333 !important;
 }
 
-/* Style for Mobile Resolutions */
+/* -------------------------
+   MOBILE (phones) ≤ 600px
+-------------------------- */
 @media screen and (max-width: 600px) {
+
+    /* Base text scaling */
     body {
         font-size: 14px;
+        padding: 0 10px;
     }
+
+    /* Navigation becomes stacked vertically */
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
     ul li a {
         padding: 10px 12px;
+        width: 100%;
         font-size: 14px;
     }
+
+    /* Headings */
     #main-heading {
-        font-size: 30px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        font-size: 28px;
+        margin: 10px 0;
     }
-    p {
-        font-size: 16px;
-        margin-left: 20px;
-        margin-right: 20px;
+
+    #browser-wars-heading {
+        font-size: 24px;
+    }
+
+    /* Paragraphs & spacing */
+    p, 
+    div.abstract, 
+    #subsection,
+    #concepts-txt,
+    ol.concepts-list {
+        margin-left: 10px;
+        margin-right: 10px;
         padding: 10px;
+        font-size: 16px;
     }
+
+    ol {
+        margin-left: 20px;
+    }
+
+    /* Images shrink properly */
+    img.center {
+        width: 90%;
+    }
+
+    /* Tables */
     table, th, td {
         font-size: 12px;
+        width: 100%;
     }
+
+    /* Quiz box */
     .quiz-container {
-        width: 90%;
+        width: 95%;
         padding: 20px;
+    }
+
+    .answer-btn,
+    .fill-in-blank-input,
+    .answer-label {
+        width: 100%;
     }
 }
 
- /* Style for Desktop Resolutions */
-@media screen and (min-width: 601px) {
+
+
+/* tablet responsive design */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+
+    body {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+
+    ul li a {
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+
+    #main-heading {
+        font-size: 40px;
+    }
+
+    /* Slightly wider text spacing than mobile */
+    p,
+    div.abstract,
+    #subsection,
+    #concepts-txt,
+    ol.concepts-list {
+        margin-left: 40px;
+        margin-right: 40px;
+        font-size: 18px;
+    }
+
+    ol {
+        margin-left: 80px;
+    }
+
+    /* Images scale moderately */
+    img.center {
+        width: 70%;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    .quiz-container {
+        width: 80%;
+        padding: 35px;
+    }
+}
+
+
+
+/* -------------------------
+   DESKTOP (≥901px)
+-------------------------- */
+@media screen and (min-width: 901px) {
+
     body {
         font-size: 18px;
     }
+
     ul li a {
         padding: 14px 16px;
         font-size: 16px;
     }
+
     #main-heading {
         font-size: 50px;
-        margin-top: 20px;
-        margin-bottom: 20px;
     }
-    p {
-        font-size: 20px;
+
+    p,
+    div.abstract,
+    #subsection,
+    #concepts-txt,
+    ol.concepts-list {
         margin-left: 80px;
         margin-right: 80px;
-        padding: 20px;
+        font-size: 20px;
     }
+
+    ol {
+        margin-left: 600px;
+    }
+
+    img.center {
+        width: 50%;
+    }
+
     table, th, td {
         font-size: 16px;
     }
+
     .quiz-container {
         width: 1000px;
         padding: 50px;
